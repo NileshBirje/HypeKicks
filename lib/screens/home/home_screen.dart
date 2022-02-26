@@ -18,12 +18,17 @@ class HomeScreen extends StatelessWidget {
         style: TextStyle(color: Colors.black),
       ),
       elevation: 0,
-      leading: IconButton(
-          onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => MyApp()));
-          },
-          icon: Image.asset("assets/icons/back.png")),
+      // leading: IconButton(
+      //     onPressed: () {
+      //       // Navigator.of(context)
+      //       //     .push(MaterialPageRoute(builder: (context) => MyApp()));
+      //     },
+      //     icon: Image.asset("assets/icons/back.png")),
+      leading: const Icon(
+        Icons.menu,
+        color: Colors.black,
+      ),
+      
       actions: [
         IconButton(
             onPressed: () {}, icon: Image.asset("assets/icons/search.png")),

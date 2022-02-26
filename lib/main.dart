@@ -35,7 +35,9 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          leading: Icon(Icons.menu),
+          leading: Icon(
+            Icons.menu,
+          ),
           title: Text("Login Page"),
         ),
         body: SingleChildScrollView(
