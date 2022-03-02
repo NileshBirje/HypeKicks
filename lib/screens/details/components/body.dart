@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/constants.dart';
 import 'package:hypekicks_snkrs/models/product.dart';
@@ -52,7 +54,11 @@ class Body extends StatelessWidget {
                             text: TextSpan(
                                 text: product.price,
                                 style: Theme.of(context).textTheme.headline4),
-                          )
+                          ),
+                          SizedBox(
+                            width: 40,
+                          ),
+                          Expanded(child: Image.asset(product.image))
                         ],
                       )
                     ],

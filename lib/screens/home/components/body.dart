@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/constants.dart';
@@ -8,45 +8,45 @@ import 'package:hypekicks_snkrs/screens/details/details_screen.dart';
 import 'item_card.dart';
 
 class Body extends StatelessWidget {
+  const Body({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            child: Text(
-              "SNKRS",
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                  fontWeight: FontWeight.bold, color: Colors.red[700]),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          child: Text(
+            "SNKRS",
+            style: Theme.of(context).textTheme.headline5!.copyWith(
+                fontWeight: FontWeight.bold, color: Colors.red[700]),
+          ),
+        ),
+        Categories(),
+        SizedBox(
+          height: 10,
+        ),
+        Expanded(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(
+              horizontal: kDefaultPadding, vertical: 50),
+          child: GridView.builder(
+            itemCount: products.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, mainAxisSpacing: 30, crossAxisSpacing: 20),
+            itemBuilder: (context, index) => itemCard(
+              press: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        DetailsScreen(product: products[index]),
+                  )),
+              product: products[index],
             ),
           ),
-          Categories(),
-          SizedBox(
-            height: 10,
-          ),
-          Expanded(
-              child: Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: kDefaultPadding, vertical: 50),
-            child: GridView.builder(
-              itemCount: products.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, mainAxisSpacing: 30, crossAxisSpacing: 20),
-              itemBuilder: (context, index) => itemCard(
-                press: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          DetailsScreen(product: products[index]),
-                    )),
-                product: products[index],
-              ),
-            ),
-          ))
-        ],
-      ),
+        ))
+      ],
     );
   }
 }
