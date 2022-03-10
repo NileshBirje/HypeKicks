@@ -1,7 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:hypekicks_snkrs/main.dart';
 import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       title: Text(
         "HypeKicks",
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       ),
       elevation: 0,
       // leading: IconButton(

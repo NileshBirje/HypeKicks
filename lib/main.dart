@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/screens/home/home_screen.dart';
 
-import 'constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,8 +16,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Hypekicks",
-      theme: ThemeData(
-          textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor)),
       home: LoginPage(),
     );
   }
@@ -37,10 +34,15 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          leading: Icon(
-            Icons.menu,
+          leading: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                _showPopupMenu(context);
+              }),
+          title: Text(
+            "HypeKicks",
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          title: Text("Login Page"),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -49,8 +51,8 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.only(top: 60.0),
                 child: Center(
                   child: Container(
-                    width: 200,
-                    height: 150,
+                    width: 250,
+                    height: 200,
                     padding: EdgeInsets.only(top: 40.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
@@ -96,13 +98,22 @@ class _LoginPageState extends State<LoginPage> {
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Text('Login',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                      style: TextStyle(color: Colors.white, fontSize: 22 )),
                 ),
               )
             ],
           ),
-        )
-        //
-        );
+        ));
   }
+}
+
+void _showPopupMenu(BuildContext context) async {
+  await showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(0, 80, 100, 100),
+      items: [
+        PopupMenuItem(child: Text("My orders")),
+        PopupMenuItem(child: Text("My orders")),
+      ],
+      elevation: 8.0);
 }

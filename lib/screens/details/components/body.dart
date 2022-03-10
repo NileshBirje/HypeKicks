@@ -19,13 +19,43 @@ class Body extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: size.height * 0.5),
-                  height: 500,
+                  margin: EdgeInsets.only(top: size.height * 0.2),
+                  padding: EdgeInsets.only(
+                    top: size.height * 0.12,
+                    left: kDefaultPadding,
+                  ),
+                  height: 735,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(24),
                           topRight: Radius.circular(24))),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: const [
+                              Text(""),
+                            ],
+                          ),
+                          RichText(
+                              text: TextSpan(
+                                  style: TextStyle(color: kTextColor),
+                                  children: [
+                                TextSpan(text: "Size\n"),
+                                TextSpan(
+                                    text: "US${product.size}",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline5!
+                                        .copyWith(fontWeight: FontWeight.bold))
+                              ]))
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -58,7 +88,11 @@ class Body extends StatelessWidget {
                           SizedBox(
                             width: 40,
                           ),
-                          Expanded(child: Image.asset(product.image))
+                          Expanded(
+                              child: Image.asset(
+                            product.image,
+                            fit: BoxFit.fitWidth,
+                          ))
                         ],
                       )
                     ],
