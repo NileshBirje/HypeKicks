@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/constants.dart';
 import 'package:hypekicks_snkrs/models/product.dart';
 
+import 'ProductSize.dart';
+
 class Body extends StatelessWidget {
   const Body({Key? key, required this.product}) : super(key: key);
   final Product product;
@@ -33,27 +35,9 @@ class Body extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Column(
-                            children: const [
-                              Text(""),
-                            ],
-                          ),
-                          RichText(
-                              text: TextSpan(
-                                  style: TextStyle(color: kTextColor),
-                                  children: [
-                                TextSpan(text: "Size\n"),
-                                TextSpan(
-                                    text: "US${product.size}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline5!
-                                        .copyWith(fontWeight: FontWeight.bold))
-                              ]))
-                        ],
-                      ),
+                      ProductSize(product: product),
+                      Text(product.description,
+                      style: TextStyle(height: 1.5),)
                     ],
                   ),
                 ),
@@ -106,3 +90,5 @@ class Body extends StatelessWidget {
     );
   }
 }
+
+
