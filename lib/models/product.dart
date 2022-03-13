@@ -70,7 +70,7 @@ List<Product> products = [
       price: "₹21,499",
       color: Colors.pinkAccent,
       size: 10),
-      Product(
+  Product(
       id: 7,
       image: "assets/images/unc.png",
       title: "AJ1 UNC",

@@ -5,6 +5,7 @@ import 'package:hypekicks_snkrs/constants.dart';
 import 'package:hypekicks_snkrs/models/product.dart';
 
 import 'ProductSize.dart';
+import 'description.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key, required this.product}) : super(key: key);
@@ -36,8 +37,8 @@ class Body extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ProductSize(product: product),
-                      Text(product.description,
-                      style: TextStyle(height: 1.5),)
+                      Description(product: product),
+                      CartCounter()
                     ],
                   ),
                 ),
@@ -91,4 +92,48 @@ class Body extends StatelessWidget {
   }
 }
 
+class CartCounter extends StatefulWidget {
+  const CartCounter({Key? key}) : super(key: key);
 
+  @override
+  State<CartCounter> createState() => _CartCounterState();
+}
+
+class _CartCounterState extends State<CartCounter> {
+  int numOfItems = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        buildOutlinedButton(
+          iconData: Icons.remove,
+          press: () {if (numOfItems > 1) {
+              setState(() {
+                numOfItems--;
+              });
+            }
+          },
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text("01", style: Theme.of(context).textTheme.headline6),
+        ),
+      ],
+    );
+  }
+
+  SizedBox buildOutlinedButton(
+      {required IconData iconData, required Function press}) {
+    return SizedBox(
+        width: 40,
+        height: 32,
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+              padding: EdgeInsets.zero,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(13))),
+          onPressed: press.call(),
+          child: Icon(iconData),
+        ));
+  }
+}

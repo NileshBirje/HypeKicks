@@ -12,41 +12,44 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          child: Text(
-            "SNKRS",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                fontWeight: FontWeight.bold, color: Colors.red[700]),
-          ),
-        ),
-        Categories(),
-        SizedBox(
-          height: 10,
-        ),
-        Expanded(
-            child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: kDefaultPadding, vertical: 50),
-          child: GridView.builder(
-            itemCount: products.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, mainAxisSpacing: 30, crossAxisSpacing: 20),
-            itemBuilder: (context, index) => itemCard(
-              press: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        DetailsScreen(product: products[index]),
-                  )),
-              product: products[index],
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 42, 42, 42),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            child: Text(
+              "SNKRS",
+              style: Theme.of(context).textTheme.headline5!.copyWith(
+                  fontWeight: FontWeight.bold, color: Colors.red[700]),
             ),
           ),
-        ))
-      ],
+          Categories(),
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: kDefaultPadding, vertical: 50),
+            child: GridView.builder(
+              itemCount: products.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisSpacing: 30, crossAxisSpacing: 20),
+              itemBuilder: (context, index) => ItemCard(
+                press: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          DetailsScreen(product: products[index]),
+                    )),
+                product: products[index],
+              ),
+            ),
+          ))
+        ],
+      ),
     );
   }
 }
@@ -97,7 +100,7 @@ class _CategoriesState extends State<Categories> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: selectedIndex == index
-                        ? Colors.black
+                        ? Colors.white
                         : Colors.grey[500]),
               ),
               Container(

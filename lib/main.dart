@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/screens/home/home_screen.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -32,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 42, 42, 42),
         appBar: AppBar(
           leading: IconButton(
               icon: Icon(Icons.menu),
@@ -57,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50.0),
                     ),
-                    child: Image.asset('assets/images/Logo.png'),
+                    child: Image.asset('assets/images/unc.png'),
                   ),
                 ),
               ),
@@ -65,9 +64,12 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.only(
                       left: 15.0, right: 15.0, top: 15, bottom: 0),
                   child: TextField(
-                    cursorColor: Colors.black,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(), labelText: 'Email:'),
+                        fillColor: Colors.white,
+                        filled: true,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(13)),
+                        labelText: 'Email:'),
                   )),
               Padding(
                 padding: const EdgeInsets.only(
@@ -76,7 +78,10 @@ class _LoginPageState extends State<LoginPage> {
                   cursorColor: Colors.black,
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(13)),
                     labelText: 'Password:',
                   ),
                 ),
@@ -84,21 +89,21 @@ class _LoginPageState extends State<LoginPage> {
               TextButton(
                 onPressed: () {},
                 child: Text('Forgot Password?',
-                    style: TextStyle(color: Colors.black, fontSize: 15)),
+                    style: TextStyle(color: Colors.white, fontSize: 15)),
               ),
               Container(
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
                     color: Colors.blue,
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(13)),
                 child: TextButton(
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Text('Login',
-                      style: TextStyle(color: Colors.white, fontSize: 22 )),
+                      style: TextStyle(color: Colors.white, fontSize: 22)),
                 ),
               )
             ],

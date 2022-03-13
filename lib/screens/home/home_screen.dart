@@ -13,10 +13,10 @@ class HomeScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 42, 42, 42),
       title: Text(
         "HypeKicks",
-        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
       elevation: 0,
       // leading: IconButton(
@@ -32,13 +32,19 @@ class HomeScreen extends StatelessWidget {
         onPressed: () async {
           _showPopupMenu(context);
         },
-        color: Colors.black,
+        color: Colors.white,
       ),
       actions: [
         IconButton(
-            onPressed: () {}, icon: Image.asset("assets/icons/search.png")),
+          onPressed: () {},
+          // icon: Image.asset("assets/icons/search.png")
+          icon: Icon(Icons.search),
+        ),
         IconButton(
-            onPressed: () {}, icon: Image.asset("assets/icons/checkout.png")),
+          onPressed: () {},
+          // icon: Image.asset("assets/icons/checkout.png")
+          icon: Icon(Icons.shopping_cart),
+        ),
         SizedBox(
           width: 10.0,
         )

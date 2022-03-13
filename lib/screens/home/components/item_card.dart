@@ -5,11 +5,10 @@ import 'package:hypekicks_snkrs/models/product.dart';
 
 import '../../../constants.dart';
 
-// ignore: camel_case_types
-class itemCard extends StatelessWidget {
+class ItemCard extends StatelessWidget {
   final Product product;
   final Function press;
-  const itemCard({
+  const ItemCard({
     Key? key,
     required this.product,
     required this.press,
