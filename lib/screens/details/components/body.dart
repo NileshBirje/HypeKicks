@@ -29,7 +29,7 @@ class Body extends StatelessWidget {
                   ),
                   height: 735,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 42, 42, 42),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(24),
                           topRight: Radius.circular(24))),

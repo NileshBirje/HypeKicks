@@ -26,14 +26,12 @@ class DetailsScreen extends StatelessWidget {
       shadowColor: Colors.black,
       // title: Text(product.title, style: TextStyle(fontWeight: FontWeight.bold)),
       leading: IconButton(
-        icon: Image.asset("assets/icons/back.png"),
+        icon: const Icon(Icons.arrow_back_ios),
         onPressed: () => Navigator.pop(context),
       ),
       actions: [
-        IconButton(
-            onPressed: () {}, icon: Image.asset("assets/icons/search.png")),
-        IconButton(
-            onPressed: () {}, icon: Image.asset("assets/icons/checkout.png")),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
       ],
     );
   }

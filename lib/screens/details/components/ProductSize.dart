@@ -20,7 +20,10 @@ class ProductSize extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Color:"),
+              Text("Color:",
+                  style: TextStyle(
+                    color: Colors.white,
+                  )),
               Row(
                 children: [
                   ColorDot(
@@ -36,13 +39,18 @@ class ProductSize extends StatelessWidget {
         Expanded(
           child: RichText(
               text: TextSpan(style: TextStyle(color: kTextColor), children: [
-            TextSpan(text: "Size:\n"),
             TextSpan(
-                text: "US${product.size}",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline5!
-                    .copyWith(fontWeight: FontWeight.bold))
+                text: "Size:\n",
+                style: TextStyle(
+                  color: Colors.white,
+                )),
+            TextSpan(
+              text: "US${product.size}",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline5!
+                  .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+            )
           ])),
         )
       ],

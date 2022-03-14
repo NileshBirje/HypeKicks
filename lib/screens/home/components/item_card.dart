@@ -23,7 +23,8 @@ class ItemCard extends StatelessWidget {
             // height: 140,
             // width: 150,
             decoration: BoxDecoration(
-                color: product.color, borderRadius: BorderRadius.circular(16)),
+                color: Color.fromARGB(17, 158, 158, 158),
+                borderRadius: BorderRadius.circular(16)),
             child: TextButton(
               onPressed: () {
                 press();
@@ -37,14 +38,14 @@ class ItemCard extends StatelessWidget {
         ),
         Text(
           product.title,
-          style: TextStyle(color: kTextColor),
+          style: TextStyle(color: Colors.white),
         ),
         SizedBox(
           height: 5,
         ),
         Text(
           product.price,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         )
       ],
     );

@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                       left: 15.0, right: 15.0, top: 15, bottom: 0),
                   child: TextField(
                     decoration: InputDecoration(
-                        fillColor: Colors.white,
+                        fillColor: Color.fromARGB(255, 100, 100, 100),
                         filled: true,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(13)),
@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                   cursorColor: Colors.black,
                   obscureText: true,
                   decoration: InputDecoration(
-                    fillColor: Colors.white,
+                    fillColor: Color.fromARGB(255, 100, 100, 100),
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(13)),
