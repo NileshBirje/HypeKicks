@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hypekicks_snkrs/models/product.dart';
 
-import '../../models/product.dart';
 import 'components/body.dart';
 
 class DetailsScreen extends StatelessWidget {

@@ -23,7 +23,7 @@ class ItemCard extends StatelessWidget {
             // height: 140,
             // width: 150,
             decoration: BoxDecoration(
-                color: Color.fromARGB(17, 158, 158, 158),
+                color: product.color,
                 borderRadius: BorderRadius.circular(16)),
             child: TextButton(
               onPressed: () {

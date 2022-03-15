@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/constants.dart';
 import 'package:hypekicks_snkrs/models/product.dart';
+import 'package:hypekicks_snkrs/screens/details/components/buy_button.dart';
+import 'package:hypekicks_snkrs/screens/details/components/cart_counter.dart';
 
 import 'ProductSize.dart';
 import 'description.dart';
@@ -29,7 +31,7 @@ class Body extends StatelessWidget {
                   ),
                   height: 735,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 42, 42, 42),
+                      color: Color.fromARGB(139, 70, 70, 70),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(24),
                           topRight: Radius.circular(24))),
@@ -37,8 +39,14 @@ class Body extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ProductSize(product: product),
+                      SizedBox(
+                        height: 90,
+                      ),
                       Description(product: product),
-                      CartCounter()
+                      SizedBox(height: 10),
+                      CartCounter(),
+                      SizedBox(height: 10),
+                      Buy_button(),
                     ],
                   ),
                 ),
@@ -89,51 +97,5 @@ class Body extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class CartCounter extends StatefulWidget {
-  const CartCounter({Key? key}) : super(key: key);
-
-  @override
-  State<CartCounter> createState() => _CartCounterState();
-}
-
-class _CartCounterState extends State<CartCounter> {
-  int numOfItems = 1;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        buildOutlinedButton(
-          iconData: Icons.remove,
-          press: () {if (numOfItems > 1) {
-              setState(() {
-                numOfItems--;
-              });
-            }
-          },
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text("01", style: Theme.of(context).textTheme.headline6),
-        ),
-      ],
-    );
-  }
-
-  SizedBox buildOutlinedButton(
-      {required IconData iconData, required Function press}) {
-    return SizedBox(
-        width: 40,
-        height: 32,
-        child: OutlinedButton(
-          style: OutlinedButton.styleFrom(
-              padding: EdgeInsets.zero,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(13))),
-          onPressed: press.call(),
-          child: Icon(iconData),
-        ));
   }
 }
