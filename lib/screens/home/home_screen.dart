@@ -1,14 +1,15 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'components/body.dart';
+// import 'components/body.dart';
+import 'components/mainbody.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Body(), appBar: buildAppBar(context));
+    return Scaffold(body: MainBody(), appBar: buildAppBar(context));
   }
 
   AppBar buildAppBar(BuildContext context) {

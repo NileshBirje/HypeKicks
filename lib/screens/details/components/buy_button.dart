@@ -9,20 +9,21 @@ class Buy_button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      child: OutlinedButton(
-    style: OutlinedButton.styleFrom(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(13),
-      ),
-    ),
-    child: Text(
-      "Buy Now".toUpperCase(),
-      style: const TextStyle(
-          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
-    ),
-    onPressed: () {},
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 1, 0),
+      child: Container(
+        height: 50,
+        width: 450,
+        decoration: BoxDecoration(
+            color: Colors.blue, borderRadius: BorderRadius.circular(13)),
+        child: TextButton(
+          child: Text(
+            "Buy Now".toUpperCase(),
+            style: const TextStyle(
+                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+          ),
+          onPressed: () {},
+        ),
       ),
     );
   }

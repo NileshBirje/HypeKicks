@@ -86,10 +86,20 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text('Forgot Password?',
-                    style: TextStyle(color: Colors.white, fontSize: 15)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Forgot Password?',
+                        style: TextStyle(color: Colors.white, fontSize: 15)),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('New User?',
+                        style: TextStyle(color: Colors.white, fontSize: 15)),
+                  ),
+                ],
               ),
               Container(
                 height: 50,

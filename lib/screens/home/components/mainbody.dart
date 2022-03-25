@@ -7,75 +7,74 @@ import 'package:hypekicks_snkrs/screens/details/details_screen.dart';
 
 import 'item_card.dart';
 
-class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+class MainBody extends StatelessWidget {
+  const MainBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 42, 42, 42),
-      body: Body_column(),
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color.fromARGB(255, 42, 42, 42),
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: "account",
-                backgroundColor: Colors.blue),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: "home",
-                backgroundColor: Colors.blue)
-          ]),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              child: Text(
+                "SNKRS",
+                style: Theme.of(context).textTheme.headline5!.copyWith(
+                    fontWeight: FontWeight.bold, color: Colors.red[700]),
+              ),
+            ),
+            Categories(),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: kDefaultPadding, vertical: 50),
+              child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 30,
+                    crossAxisSpacing: 20),
+                itemBuilder: (context, index) => ItemCard(
+                  press: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsScreen(product: products[index]),
+                      )),
+                  product: products[index],
+                ),
+              ),
+            ))
+          ],
+        ),
+      ),
+      bottomNavigationBar: bottomNavigation(),
     );
   }
 }
 
-class Body_column extends StatelessWidget {
-  const Body_column({
+class bottomNavigation extends StatelessWidget {
+  const bottomNavigation({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          child: Text(
-            "SNKRS",
-            style: Theme.of(context)
-                .textTheme
-                .headline5!
-                .copyWith(fontWeight: FontWeight.bold, color: Colors.red[700]),
-          ),
-        ),
-        Categories(),
-        SizedBox(
-          height: 10,
-        ),
-        Expanded(
-            child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: kDefaultPadding, vertical: 50),
-          child: GridView.builder(
-            itemCount: products.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, mainAxisSpacing: 30, crossAxisSpacing: 20),
-            itemBuilder: (context, index) => ItemCard(
-              press: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        DetailsScreen(product: products[index]),
-                  )),
-              product: products[index],
-            ),
-          ),
-        ))
-      ],
-    );
+    return BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 42, 42, 42),
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+              backgroundColor: Colors.blue),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: "Account",
+              backgroundColor: Colors.blue)
+        ]);
   }
 }
 
