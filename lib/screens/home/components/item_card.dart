@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/models/product.dart';
 
-import '../../../constants.dart';
-
 class ItemCard extends StatelessWidget {
   final Product product;
   final Function press;
@@ -23,8 +21,7 @@ class ItemCard extends StatelessWidget {
             // height: 140,
             // width: 150,
             decoration: BoxDecoration(
-                color: product.color,
-                borderRadius: BorderRadius.circular(16)),
+                color: product.color, borderRadius: BorderRadius.circular(16)),
             child: TextButton(
               onPressed: () {
                 press();

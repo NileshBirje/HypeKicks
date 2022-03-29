@@ -17,7 +17,7 @@ class MainBody extends StatelessWidget {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Text(
@@ -30,37 +30,39 @@ class MainBody extends StatelessWidget {
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: kDefaultPadding, vertical: 50),
+                  horizontal: kDefaultPadding, vertical: 0),
               child: GridView.builder(
                 itemCount: products.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 30,
-                    crossAxisSpacing: 20),
-                itemBuilder: (context, index) => ItemCard(
-                  press: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            DetailsScreen(product: products[index]),
-                      )),
-                  product: products[index],
-                ),
-              ),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 30,
+                      crossAxisSpacing: 20),
+                  itemBuilder: (context, index) => ItemCard(
+                      product: products[index],
+                      press: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  DetailsScreen(product: products[index]))))),
             ))
           ],
         ),
       ),
-      bottomNavigationBar: bottomNavigation(),
+      bottomNavigationBar: Navigation(),
     );
   }
 }
 
-class bottomNavigation extends StatelessWidget {
-  const bottomNavigation({
+class Navigation extends StatefulWidget {
+  const Navigation({
     Key? key,
   }) : super(key: key);
 
+  @override
+  _NavigationState createState() => _NavigationState();
+}
+
+class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(

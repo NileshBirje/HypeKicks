@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "965713312389",
+    "project_id": "hypekicks-snkrs",
+    "storage_bucket": "hypekicks-snkrs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965713312389:android:de02c0f0f0f11ef894c7ec",
+        "android_client_info": {
+          "package_name": "com.example.hypekicks_snkrs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965713312389-769eda5jam2csv4flkuhgfshiobv64nl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcTfc6bJ5vPn8H84EyhHaWtYVxBJLVwFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965713312389-769eda5jam2csv4flkuhgfshiobv64nl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

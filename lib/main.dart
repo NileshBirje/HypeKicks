@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:hypekicks_snkrs/loginpage.dart';
 import 'package:hypekicks_snkrs/screens/home/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Hypekicks",
-      home: LoginPage(),
+      home: LoginPageNew(),
     );
   }
 }
@@ -65,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                       left: 15.0, right: 15.0, top: 15, bottom: 0),
                   child: TextField(
                     decoration: InputDecoration(
+                        hintText: "example@gmail.com",
                         fillColor: Color.fromARGB(255, 100, 100, 100),
                         filled: true,
                         border: OutlineInputBorder(
@@ -109,7 +113,10 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(13)),
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => HomeScreen()));
+                    
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Text('Login',
