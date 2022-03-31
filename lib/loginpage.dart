@@ -2,17 +2,18 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hypekicks_snkrs/registrationpage.dart';
 import 'package:hypekicks_snkrs/screens/home/home_screen.dart';
 
-class LoginPageNew extends StatefulWidget {
-  const LoginPageNew({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageNewState createState() => _LoginPageNewState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageNewState extends State<LoginPageNew> {
+class _LoginPageState extends State<LoginPage> {
   final SizedBox sb = SizedBox(
     height: 20,
   );
@@ -32,12 +33,12 @@ class _LoginPageNewState extends State<LoginPageNew> {
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value!.isEmpty) {
-          return ("Please Enter Your Email");
+          return ("Please Enter Your EmailID");
         }
-        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+. [a-z]")
-            .hasMatch(value)) {
-          return ("Please Enter Your Email");
+        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+          return ("Please Enter Valid EmailID");
         }
+        return null;
       },
       onSaved: (value) {
         emailController.text = value!;
@@ -45,7 +46,7 @@ class _LoginPageNewState extends State<LoginPageNew> {
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
           prefixIcon: Icon(Icons.mail),
-          hintText: "enter valid email-id",
+          hintText: "enter Email-ID",
           fillColor: Color.fromARGB(255, 100, 100, 100),
           filled: true,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(13)),
@@ -55,7 +56,16 @@ class _LoginPageNewState extends State<LoginPageNew> {
     final pswdField = TextFormField(
       autofocus: false,
       controller: pswdController,
-      // validator: (){},
+      validator: (value) {
+        RegExp regex = RegExp(r'^.{6,}$');
+        if (value!.isEmpty) {
+          return ("Password is required for Login");
+        }
+        if (!regex.hasMatch(value)) {
+          return ("Please Enter Valid Password");
+        }
+        return null;
+      },
       onSaved: (value) {
         pswdController.text = value!;
       },
@@ -77,8 +87,7 @@ class _LoginPageNewState extends State<LoginPageNew> {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+          _loginFunction(emailController.text, pswdController.text);
         },
         child: Text('Login',
             style: TextStyle(
@@ -159,6 +168,24 @@ class _LoginPageNewState extends State<LoginPageNew> {
             )),
       )),
     );
+  }
+
+  void _loginFunction(String email, String pswd) async {
+    if (_formkey.currentState!.validate()) {
+      await _auth
+          .signInWithEmailAndPassword(email: email, password: pswd)
+          .then((uid) => {
+                Fluttertoast.showToast(msg: "Login Successful"),
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => HomeScreen()))
+                //  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()))
+              })
+          .catchError((e) {
+        Fluttertoast.showToast(msg: "Incorrect Email or Password. Please try again.");
+        
+        
+      });
+    }
   }
 }
 

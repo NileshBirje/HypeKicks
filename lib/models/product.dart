@@ -29,31 +29,23 @@ List<Product> products = [
   Product(
       id: 2,
       image: "assets/images/AJ2.png",
-      title: "AJ2 Varsity Red",
-      description: "description",
+      title: "AJ2 White&Varsity Red",
+      description:
+          "When the Air Jordan 2 debuted in 1986, it was the first sneaker to bring luxury detail to a peak sport performance silhouette. Made in Italy, original pairs featured a premium look and feel that quickly earned them an iconic spot in Air Jordan history. Inspired by the heritage and impact of this legendary sneaker, Off-White™ designer Virgil Abloh now adds to the legacy with his own personal homage to the Air Jordan 2 Low.",
       price: "₹18,999",
-      color: Colors.redAccent.shade700,
+      color: Colors.redAccent.shade400,
       size: 9),
   Product(
       id: 3,
-      image: "assets/images/retro_high.png",
-      title: "AJ1 Retro-High ",
-      description:
-          "The Air Jordan 1 is a footwear pioneer—but the OG silhouette isn't too old to learn new tricks. The Air Jordan 1 KO repackages the famous design using a mix of leather and canvas to create a fit that's redesigned for comfort. This edition sports a classic colour scheme, with contrasting hits of black and white blended with Varsity Red.",
-      price: "₹38,899",
-      color: Colors.redAccent.shade700,
-      size: 9),
-  Product(
-      id: 4,
       image: "assets/images/volt_gold.png",
       title: "AJ1 Volt Gold ",
       description:
           "This fresh take on the classic Air Jordan 1 draws design cues from previous AJ1 colourways that left a cultural mark. The tongue features exposed foam and a transparent, reversed tag for a deconstructed feel, while tri-tonal colourblocking in Volt, Sail and University Gold adds a burst of bright energy to the timeless silhouette.",
       price: "₹36,999",
-      color: Colors.yellow,
+      color: Color.fromARGB(255, 146, 132, 0),
       size: 7),
   Product(
-      id: 5,
+      id: 4,
       image: "assets/images/panda.png",
       title: "AJ1 Panda",
       description:
@@ -61,6 +53,15 @@ List<Product> products = [
       price: "₹14,999",
       color: Color.fromARGB(255, 187, 187, 187),
       size: 8),
+  Product(
+      id: 5,
+      image: "assets/images/retro_high.png",
+      title: "AJ1 Retro-High ",
+      description:
+          "The Air Jordan 1 is a footwear pioneer—but the OG silhouette isn't too old to learn new tricks. The Air Jordan 1 KO repackages the famous design using a mix of leather and canvas to create a fit that's redesigned for comfort. This edition sports a classic colour scheme, with contrasting hits of black and white blended with Varsity Red.",
+      price: "₹38,899",
+      color: Colors.redAccent.shade400,
+      size: 9),
   Product(
       id: 6,
       image: "assets/images/AF1.png",
@@ -82,31 +83,23 @@ List<Product> products = [
   Product(
       id: 8,
       image: "assets/images/AJ2.png",
-      title: "AJ2 Varsity Red",
-      description: "description",
+      title: "AJ2 White&Varsity Red",
+      description:
+          "When the Air Jordan 2 debuted in 1986, it was the first sneaker to bring luxury detail to a peak sport performance silhouette. Made in Italy, original pairs featured a premium look and feel that quickly earned them an iconic spot in Air Jordan history. Inspired by the heritage and impact of this legendary sneaker, Off-White™ designer Virgil Abloh now adds to the legacy with his own personal homage to the Air Jordan 2 Low.",
       price: "₹18,999",
-      color: Colors.redAccent.shade700,
+      color: Colors.redAccent.shade400,
       size: 9),
   Product(
       id: 9,
-      image: "assets/images/retro_high.png",
-      title: "AJ1 Retro-High ",
-      description:
-          "The Air Jordan 1 is a footwear pioneer—but the OG silhouette isn't too old to learn new tricks. The Air Jordan 1 KO repackages the famous design using a mix of leather and canvas to create a fit that's redesigned for comfort. This edition sports a classic colour scheme, with contrasting hits of black and white blended with Varsity Red.",
-      price: "₹38,899",
-      color: Colors.redAccent.shade700,
-      size: 9),
-  Product(
-      id: 10,
       image: "assets/images/volt_gold.png",
       title: "AJ1 Volt Gold ",
       description:
           "This fresh take on the classic Air Jordan 1 draws design cues from previous AJ1 colourways that left a cultural mark. The tongue features exposed foam and a transparent, reversed tag for a deconstructed feel, while tri-tonal colourblocking in Volt, Sail and University Gold adds a burst of bright energy to the timeless silhouette.",
       price: "₹36,999",
-      color: Colors.yellow,
+      color: Color.fromARGB(255, 146, 132, 0),
       size: 7),
   Product(
-      id: 11,
+      id: 10,
       image: "assets/images/panda.png",
       title: "AJ1 Panda",
       description:
@@ -114,6 +107,15 @@ List<Product> products = [
       price: "₹14,999",
       color: Color.fromARGB(255, 187, 187, 187),
       size: 8),
+  Product(
+      id: 11,
+      image: "assets/images/retro_high.png",
+      title: "AJ1 Retro-High ",
+      description:
+          "The Air Jordan 1 is a footwear pioneer—but the OG silhouette isn't too old to learn new tricks. The Air Jordan 1 KO repackages the famous design using a mix of leather and canvas to create a fit that's redesigned for comfort. This edition sports a classic colour scheme, with contrasting hits of black and white blended with Varsity Red.",
+      price: "₹38,899",
+      color: Colors.redAccent.shade400,
+      size: 9),
   Product(
       id: 12,
       image: "assets/images/AF1.png",

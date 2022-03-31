@@ -7,8 +7,8 @@ import 'package:hypekicks_snkrs/screens/details/details_screen.dart';
 
 import 'item_card.dart';
 
-class MainBody extends StatelessWidget {
-  const MainBody({Key? key}) : super(key: key);
+class Body extends StatelessWidget {
+  const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class MainBody extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                   horizontal: kDefaultPadding, vertical: 0),
               child: GridView.builder(
-                itemCount: products.length,
+                  itemCount: products.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 30,
@@ -63,19 +63,35 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+        currentIndex: _index,
+        onTap: (int index) => setState(() => _index = index),
         backgroundColor: Color.fromARGB(255, 42, 42, 42),
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Home",
-              backgroundColor: Colors.blue),
+            icon: Icon(Icons.home),
+            label: "Home",
+            activeIcon: Icon(Icons.home_outlined),backgroundColor: Color.fromARGB(255, 42, 42, 42),
+            
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: "Account",
-              backgroundColor: Colors.blue)
+            icon: Icon(Icons.person),
+            label: "Account",
+            activeIcon: Icon(Icons.person_outline),backgroundColor: Color.fromARGB(255, 42, 42, 42), 
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: "Notifications",
+            activeIcon: Icon(Icons.notifications_outlined),backgroundColor: Color.fromARGB(255, 42, 42, 42), 
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_card),
+            label: "Notifications",
+            activeIcon: Icon(Icons.add_card_outlined),backgroundColor: Color.fromARGB(255, 42, 42, 42), 
+          ),
         ]);
   }
 }

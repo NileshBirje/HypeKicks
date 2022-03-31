@@ -21,7 +21,8 @@ class ItemCard extends StatelessWidget {
             // height: 140,
             // width: 150,
             decoration: BoxDecoration(
-                color: product.color, borderRadius: BorderRadius.circular(16)),
+                color: Colors.blueGrey.shade900,
+                borderRadius: BorderRadius.circular(16)),
             child: TextButton(
               onPressed: () {
                 press();

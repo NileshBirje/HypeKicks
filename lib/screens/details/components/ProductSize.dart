@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names
 
 import 'package:flutter/material.dart';
 import 'package:hypekicks_snkrs/constants.dart';
@@ -45,7 +45,7 @@ class ProductSize extends StatelessWidget {
                   color: Colors.white,
                 )),
             TextSpan(
-              text: "US${product.size}",
+              text: "UK${product.size}",
               style: Theme.of(context)
                   .textTheme
                   .headline5!
