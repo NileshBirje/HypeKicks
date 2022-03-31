@@ -74,23 +74,26 @@ class _NavigationState extends State<Navigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Home",
-            activeIcon: Icon(Icons.home_outlined),backgroundColor: Color.fromARGB(255, 42, 42, 42),
-            
+            activeIcon: Icon(Icons.home_outlined),
+            backgroundColor: Color.fromARGB(255, 42, 42, 42),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: "Account",
-            activeIcon: Icon(Icons.person_outline),backgroundColor: Color.fromARGB(255, 42, 42, 42), 
+            activeIcon: Icon(Icons.person_outline),
+            backgroundColor: Color.fromARGB(255, 42, 42, 42),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             label: "Notifications",
-            activeIcon: Icon(Icons.notifications_outlined),backgroundColor: Color.fromARGB(255, 42, 42, 42), 
+            activeIcon: Icon(Icons.notifications_outlined),
+            backgroundColor: Color.fromARGB(255, 42, 42, 42),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_card),
             label: "Notifications",
-            activeIcon: Icon(Icons.add_card_outlined),backgroundColor: Color.fromARGB(255, 42, 42, 42), 
+            activeIcon: Icon(Icons.add_card_outlined),
+            backgroundColor: Color.fromARGB(255, 42, 42, 42),
           ),
         ]);
   }
