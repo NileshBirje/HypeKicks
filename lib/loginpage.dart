@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
           return ("Password is required for Login");
         }
         if (!regex.hasMatch(value)) {
-          return ("Please Enter Valid Password");
+          return ("Please Enter Password more than 6 Digits");
         }
         return null;
       },

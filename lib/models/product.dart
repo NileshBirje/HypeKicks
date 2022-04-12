@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final String image, title, description, price;
+  final String image, title, description, price, company;
   final int size, id;
   final Color color;
   Product(
@@ -12,6 +12,7 @@ class Product {
       required this.title,
       required this.description,
       required this.price,
+      required this.company,
       required this.color,
       required this.size});
 }
@@ -19,6 +20,7 @@ class Product {
 List<Product> products = [
   Product(
       id: 1,
+      company: "Nike",
       image: "assets/images/unc.png",
       title: "AJ1 UNC",
       description:
@@ -28,6 +30,7 @@ List<Product> products = [
       size: 8),
   Product(
       id: 2,
+      company: "Nike",
       image: "assets/images/AJ2.png",
       title: "AJ2 White&Varsity Red",
       description:
@@ -37,6 +40,7 @@ List<Product> products = [
       size: 9),
   Product(
       id: 3,
+      company: "Nike",
       image: "assets/images/volt_gold.png",
       title: "AJ1 Volt Gold ",
       description:
@@ -46,6 +50,7 @@ List<Product> products = [
       size: 7),
   Product(
       id: 4,
+      company: "Nike",
       image: "assets/images/panda.png",
       title: "AJ1 Panda",
       description:
@@ -55,6 +60,7 @@ List<Product> products = [
       size: 8),
   Product(
       id: 5,
+      company: "Nike",
       image: "assets/images/retro_high.png",
       title: "AJ1 Retro-High ",
       description:
@@ -64,6 +70,7 @@ List<Product> products = [
       size: 9),
   Product(
       id: 6,
+      company: "Nike",
       image: "assets/images/AF1.png",
       title: "AF1 High Print",
       description:
@@ -73,6 +80,7 @@ List<Product> products = [
       size: 10),
   Product(
       id: 7,
+      company: "Nike",
       image: "assets/images/unc.png",
       title: "AJ1 UNC",
       description:
@@ -82,6 +90,7 @@ List<Product> products = [
       size: 8),
   Product(
       id: 8,
+      company: "Nike",
       image: "assets/images/AJ2.png",
       title: "AJ2 White&Varsity Red",
       description:
@@ -91,6 +100,7 @@ List<Product> products = [
       size: 9),
   Product(
       id: 9,
+      company: "Nike",
       image: "assets/images/volt_gold.png",
       title: "AJ1 Volt Gold ",
       description:
@@ -100,6 +110,7 @@ List<Product> products = [
       size: 7),
   Product(
       id: 10,
+      company: "Nike",
       image: "assets/images/panda.png",
       title: "AJ1 Panda",
       description:
@@ -109,6 +120,7 @@ List<Product> products = [
       size: 8),
   Product(
       id: 11,
+      company: "Nike",
       image: "assets/images/retro_high.png",
       title: "AJ1 Retro-High ",
       description:
@@ -118,6 +130,7 @@ List<Product> products = [
       size: 9),
   Product(
       id: 12,
+      company: "Nike",
       image: "assets/images/AF1.png",
       title: "AF1 High Print",
       description:

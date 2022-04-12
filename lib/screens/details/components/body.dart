@@ -57,7 +57,7 @@ class Body extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Nike",
+                        product.company,
                         style: TextStyle(color: Colors.white),
                       ),
                       SizedBox(

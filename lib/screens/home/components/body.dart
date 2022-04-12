@@ -43,7 +43,8 @@ class Body extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  DetailsScreen(product: products[index]))))),
+                                  DetailsScreen(product: products[index])))
+                                  )),
             ))
           ],
         ),
@@ -91,7 +92,7 @@ class _NavigationState extends State<Navigation> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_card),
-            label: "Notifications",
+            label: "Payments",
             activeIcon: Icon(Icons.add_card_outlined),
             backgroundColor: Color.fromARGB(255, 42, 42, 42),
           ),
@@ -133,7 +134,9 @@ class _CategoriesState extends State<Categories> {
         onTap: () {
           setState(() {
             selectedIndex = index;
+
           });
+        
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),

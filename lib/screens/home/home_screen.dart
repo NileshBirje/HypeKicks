@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hypekicks_snkrs/main.dart';
 import 'components/body.dart';
 
@@ -57,7 +58,9 @@ void _showPopupMenu(BuildContext context) async {
       items: [
         PopupMenuItem(
             child: MaterialButton(
-          onPressed: () {},
+          onPressed: () {
+            Fluttertoast.showToast(msg: "You have no orders");
+          },
           child: Text("My Orders"),
         )),
         PopupMenuItem(

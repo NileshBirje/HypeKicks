@@ -1,6 +1,9 @@
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import '../../home/components/body.dart';
 
 class Buy_button extends StatelessWidget {
   const Buy_button({
@@ -22,7 +25,9 @@ class Buy_button extends StatelessWidget {
             style: const TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Fluttertoast.showToast(msg: "Item added to cart");
+          },
         ),
       ),
     );
