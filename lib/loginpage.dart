@@ -194,8 +194,7 @@ void _showPopupMenu(BuildContext context) async {
       context: context,
       position: RelativeRect.fromLTRB(0, 80, 100, 100),
       items: [
-        PopupMenuItem(child: Text("My orders")),
-        PopupMenuItem(child: Text("My orders")),
+        PopupMenuItem(child: Text("Customer Care")),
       ],
       elevation: 8.0);
 }
